@@ -1,5 +1,5 @@
 <?php
-include "../../controller/sesiones/sesiones_pac.php";
+include "../../../controller/sesiones/sesiones_pac.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ include "../../controller/sesiones/sesiones_pac.php";
     <title>Pacientes</title>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/paciente-css/estilos.css">
+    <link rel="stylesheet" href="../../assets/css/paciente-css/estilos.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap');
     </style>
@@ -19,17 +19,17 @@ include "../../controller/sesiones/sesiones_pac.php";
     <header>
         <div class="container__menu">
             <div class="logo">
-                <img src="../assets/images/Logo2.png" alt="">
+                <img src="../../assets/images/Logo2.png" alt="">
             </div>
             <div class="menu">
                 <i class="fas fa-bars" id="btn_menu"></i>
                 <div id="back_menu"></div>
                 <nav id="nav">
-                    <img src="../assets/images/pacientemenu.png" alt="">
+                    <img src="../../assets/images/pacientemenu.png" alt="">
                     <ul>
-                        <li><a href="index_pac.php" >Inicio</a></li>
-                        <li><a href="../../controller/sesiones/">Actualizar datos</a></li>
-                        <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
+                        <li><a href="../index_pac.php" >Inicio</a></li>
+                        <li><a href="../update_info_pac/update_pacientes.php">Actualizar datos</a></li>
+                        <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
             </div>
@@ -42,7 +42,7 @@ include "../../controller/sesiones/sesiones_pac.php";
                     <h1 class="titulo1">Agendar cita</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="agendarcitaalert1.php" method="POST">                                
+                            <form action="" method="POST">                                
                                 <p>
                                     <label class="txtlabel">Especialidad</label>
                                     <select class="selectage" name="" d=""  required>
@@ -72,7 +72,7 @@ include "../../controller/sesiones/sesiones_pac.php";
                                 <p>
                                     <label class="txtlabel">Elija hora</label>
                                     <input type="time" name="f_nacimiento" required>
-                                </p>                                                       
+                                </p>
                                 <p class="block">
                                     <button name="" type="submit">
                                        Agendar
@@ -85,8 +85,10 @@ include "../../controller/sesiones/sesiones_pac.php";
             </div> 
         </div>
     </main>
-    <script src="../assets/js-general/menu-responsive.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../assets/js-general/menu-responsive.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../assets/js/sweetAlert1.js"></scripT>
+
     
 </body>
 </html>
