@@ -104,14 +104,34 @@ include "../../../controller/conexion-db/db_connect.php";
     <!-- extension responsive -->
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script>
-        function enviarform(){
-            window.location = "new_espec.php"
-        }
+
         $(document).ready(function() {
             $('#example').DataTable({
-                responsive: true
-            });
-        } );  
+                responsive: true,
+                "language": {
+                    "lengthMenu": "Mostrar " + 
+                        `<select class="custom-select custom-select-sm form-control form-control-sm">
+                            <option value='10'>10</option>
+                            <option value='25'>25</option>
+                            <option value='50'>50</option>
+                            <option value='100'>100</option>
+                            <option value='-1'>Todos</option>
+                        </select>` + 
+                        " registros por página",
+                    "zeroRecords": "No hay registros ",
+                    "info": "Mostrando pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "No registros disponibles",
+                    "infoFiltered": "(Filtrado de _MAX_ registros)",
+                    "search":"Buscar",
+                    "paginate":{
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+                });
+        });  
+
+
     </script>
 </body>
 </html>
