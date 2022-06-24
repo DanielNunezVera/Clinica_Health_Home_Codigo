@@ -28,7 +28,7 @@ include "../../controller/sesiones/sesiones_pac.php";
                     <img src="../assets/images/pacientemenu.png" alt="">
                     <ul>
                         <li><a href="index_pac.php" >Inicio</a></li>
-                        <li><a href="../../controller/sesiones/">Actualizar datos</a></li>
+                        <li><a href="../update pacientes/update_pacientes.php">Actualizar datos</a></li>
                         <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
