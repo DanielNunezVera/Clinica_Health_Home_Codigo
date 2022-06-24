@@ -3,9 +3,9 @@
 
     include "../../../controller/sesiones/sesiones_pac.php";
 
-    $consulta = "SELECT * FROM personas INNER JOIN pacientes ON personas.id_pers = pacientes.id_pac";
+    $consulta = "SELECT * FROM personas INNER JOIN pacientes ON personas.id_pers = pacientes.id_pac WHERE pacientes.id_pac = personas.id_pers;";
 
-    $resultado = mysqli_query($conectar, $consulta) or die(mysqli_error());
+    $resultado = mysqli_query($conectar, $consulta);
 
     $fila = mysqli_fetch_assoc($resultado);
 
@@ -103,8 +103,22 @@
                                     <input type="text" name="f_nacimiento" value="<?php echo date('d/m/Y',strtotime($_SESSION['fecha_nacimiento']));?>" disabled>
                                 </p>
                                 <p>
+                                    <label>Genero</label>
+                                    <input type="text" name="genero" value="<?php 
+                                    
+                                    if($_SESSION['genero'] == "m"){
+                                        echo "Masculino";
+                                    }else if($_SESSION['genero'] == "f"){
+                                        echo "Femenino";
+                                    }else if($_SESSION['genero'] == "o"){
+                                        echo "Otro";
+                                    }
+                                    
+                                    ?>" disabled>
+                                </p>
+                                <p>
                                     <label>Contraseña</label>
-                                    <input type="button" name="email" value="Cambiar contraseña" onclick="contraseña()">
+                                    <input type="button" name="pass" value="Cambiar contraseña" onclick="contraseña()">
                                 </p>
                                 <p class="block">
                                     <button name="update" type="submit">
