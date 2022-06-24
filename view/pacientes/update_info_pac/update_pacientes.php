@@ -3,7 +3,7 @@
 
     include "../../../controller/sesiones/sesiones_pac.php";
 
-    $consulta = "SELECT * FROM personas INNER JOIN pacientes ON personas.id_pers = pacientes.id_pac WHERE pacientes.id_pac = personas.id_pers;";
+    $consulta = "SELECT * FROM personas INNER JOIN pacientes ON personas.id_pers = pacientes.id_pac WHERE personas.num_doc_pers=$_SESSION[num_doc_pers]";
 
     $resultado = mysqli_query($conectar, $consulta);
 
@@ -106,11 +106,11 @@
                                     <label>Genero</label>
                                     <input type="text" name="genero" value="<?php 
                                     
-                                    if($_SESSION['genero'] == "m"){
+                                    if($_SESSION['genero'] == "M"){
                                         echo "Masculino";
-                                    }else if($_SESSION['genero'] == "f"){
+                                    }else if($_SESSION['genero'] == "F"){
                                         echo "Femenino";
-                                    }else if($_SESSION['genero'] == "o"){
+                                    }else if($_SESSION['genero'] == "O"){
                                         echo "Otro";
                                     }
                                     
