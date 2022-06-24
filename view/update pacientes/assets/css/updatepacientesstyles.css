@@ -171,7 +171,6 @@ header nav ul li:hover {
     align-items: center;
     margin-top: 400px;
 }
-
 .container__cover .caja4 h1 {
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 36px;
@@ -545,7 +544,6 @@ header nav ul li:hover {
 /* .titulo1{
     margin-top:700px;
 }
-
 .tituloprof{
     margin-top:750px;
 } */
@@ -556,19 +554,16 @@ header nav ul li:hover {
 	width: 100%;
 	border-collapse: collapse;
 }
-
 .table td,.table th{
   padding:12px 15px;
   border:1px solid #ddd;
   text-align: center;
   font-size:16px;
 }
-
 .table th{
     background: rgba(1,75,160,1);
 	color:#ffffff;
 }
-
 .table tbody tr:nth-child(even){
 	background-color: #f5f5f5;
 } */
@@ -576,14 +571,12 @@ header nav ul li:hover {
 /*responsive*/
 
 /* @media(max-width: 500px){
-
     .container__cover .caja4{
         margin-top:2224px;
     }
 	.table thead{
 		display: none;
 	}
-
 	.table, .table tbody, .table tr, .table td{
 		display: block;
 		width: 100%;
