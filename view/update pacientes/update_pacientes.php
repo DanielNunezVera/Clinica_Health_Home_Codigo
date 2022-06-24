@@ -5,7 +5,7 @@
 
     $consulta = "SELECT * FROM personas INNER JOIN pacientes ON personas.id_pers = pacientes.id_pac";
 
-    $resultado = mysqli_query($conectar, $consulta) or die(mysqli_error());
+    $resultado = mysqli_query($conectar, $consulta);
 
     $fila = mysqli_fetch_assoc($resultado);
 
