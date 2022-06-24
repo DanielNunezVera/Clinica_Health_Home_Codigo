@@ -28,7 +28,7 @@ include "../../controller/sesiones/sesiones_pac.php";
                     <img src="../assets/images/pacientemenu.png" alt="">
                     <ul>
                         <li><a href="index_pac.php" >Inicio</a></li>
-                        <li><a href="../update pacientes/update_pacientes.php">Actualizar datos</a></li>
+                        <li><a href="update_info_pac/update_pacientes.php">Actualizar datos</a></li>
                         <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
@@ -42,9 +42,9 @@ include "../../controller/sesiones/sesiones_pac.php";
                     <div class="row">
                         <h1>Bienvenido - <?php echo $_SESSION['p_nombre_pers'],' ', $_SESSION['p_apellido_pers']?></h1>
                         <br>
-                        <a href="agendarcita.php" class="boton">Agendar cita</a>
+                        <a href="agenda_cita/agendarcita.php" class="boton">Agendar cita</a>
                         
-                        <a href="" class="boton">Citas agendadas</a>
+                        <a href="view_citas/view_citas.php" class="boton">Citas agendadas</a>
                     </div>
                 </div>
                 <div class="caja2">
