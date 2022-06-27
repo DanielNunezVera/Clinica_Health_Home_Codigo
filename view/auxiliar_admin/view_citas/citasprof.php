@@ -1,5 +1,5 @@
 <?php
-include "../../controller/sesiones/sesiones_aux.php";
+include "../../../controller/sesiones/sesiones_aux.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@ include "../../controller/sesiones/sesiones_aux.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Citas</title>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/auxiliar-admin-css/estilos.css">
+    <link rel="stylesheet" href="../../assets/css/auxiliar-admin-css/estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--  Datatables  -->
@@ -26,17 +26,17 @@ include "../../controller/sesiones/sesiones_aux.php";
     <header>
         <div class="container__menu">
             <div class="logo">
-                <img src="../assets/images/Logo2.png" alt="">
+                <img src="../../assets/images/Logo2.png" alt="">
             </div>
             <div class="menu">
                 <i class="fas fa-bars" id="btn_menu"></i>
                 <div id="back_menu"></div>
                 <nav id="nav">
-                    <img src="../assets/images/icon_auxadmin.png" alt="">
+                    <img src="../../assets/images/icon_auxadmin.png" alt="">
                     <ul>
                         <li><a href="index_aux.php">Inicio</a></li>
                         <li><a href="#">Actualizar datos</a></li>
-                        <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesión</a></li>
+                        <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesión</a></li>
                     </ul>
                 </nav>
             </div>
@@ -55,10 +55,12 @@ include "../../controller/sesiones/sesiones_aux.php";
                                         <th>Id_cita</th>
                                         <th>Fecha cita</th>
                                         <th>Hora cita</th>
-                                        <th>Especilidad</th>
+                                        <th>Paciente</th>
                                         <th>Profesional</th>
+                                        <th>Consultorio</th>
+                                        <th>Especialidad</th>
                                         <th>Costo</th>
-                                        <th>Estado pago cita</th>
+                                        <th>Reasignar</th>
                                         <th>Acción</th>
                                     </tr>
                                 </thead>
@@ -67,23 +69,26 @@ include "../../controller/sesiones/sesiones_aux.php";
                                         <td>20</td>
                                         <td>07-julio-2022</td>
                                         <td>7:00 am</td>
+                                        <td>Estevan Hernandez</td>
+                                        <td>Manuel Rodolfo Castro</td>
+                                        <td>C03</td>
                                         <td>Medicina general</td>
-                                        <td>Manuel Rodolfo</td>
                                         <td>$50.000</td>
-                                        <td><a href="#">OK</a></td>
-                                        <td><a href="">Cancelar</a></td>
+                                        <td><a href="#">Reasignar</a></td>
+                                        <td><a href="#">Cancelar</a></td>
                                     </tr>
                                     <tr>
-                                        <td>54</td>
-                                        <td>30-julio-2022</td>
-                                        <td>12:00 pm</td>
-                                        <td>Dermatología </td>
-                                        <td>Lucia Castro Bermudez</td>
-                                        <td>$70.000</td>
-                                        <td><a href="#">Confirmar pago</a></td>
-                                        <td><a href="">Cancelar</a></td>
+                                        <td>20</td>
+                                        <td>09-julio-2022</td>
+                                        <td>11:00 am</td>
+                                        <td>Juan Diego Cortez</td>
+                                        <td>Manuel Rodolfo Castro</td>
+                                        <td>C03</td>
+                                        <td>Medicina general</td>
+                                        <td>$50.000</td>
+                                        <td><a href="#">Reasignar</a></td>
+                                        <td><a href="#">Cancelar</a></td>
                                     </tr>
-                                </tbody>
                             </table>  
                         </div>
                     </div> 
