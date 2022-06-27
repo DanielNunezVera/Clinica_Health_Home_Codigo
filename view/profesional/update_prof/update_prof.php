@@ -77,20 +77,14 @@ include "../../../controller/sesiones/sesiones_prof.php";
                                 </p>
                                 <p>
                                     <label>Dias laborales (inicial)</label>
-                                    <input type="date" name="dias_laborales">
+                                    <input value="lunes - viernes" name="dias_laborales" disabled>
                                 </p>
-                                <p>
-                                    <label>Dias laborales (final)</label>
-                                    <input type="date" name="dias_laborales">
-                                </p>
+
                                 <p>
                                     <label>Franja laboral (inicial)</label>
-                                    <input type="time" name="franja_horaria">
+                                    <input value="7:00am - 7:00pm" name="franja_horaria" disabled>
                                 </p>
-                                <p>
-                                    <label>Franja laboral (inicial)</label>
-                                    <input type="time" name="franja_horaria">
-                                </p>
+                                
                                 <p>
                                     <label>Contraseña</label>
                                     <input type="button" name="pass" value="Cambiar contraseña" onclick="contraseña()">
