@@ -47,7 +47,7 @@ include "../../controller/sesiones/sesiones_prof.php";
                     </div>
                 </div>
                 <div class="caja2">
-                    <img src="../assets/images/pngwing.com.png" alt="">
+                    <img src="../assets/images/profesional.png" alt="">
                 </div> 
             </div> 
         </div>
