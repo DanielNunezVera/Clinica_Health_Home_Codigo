@@ -60,7 +60,7 @@
     </header>
     <main>
         <div class="container__cover">
-            <div class="cover"> 
+            <div class="cover">
                 <div class="caja3">
                     <h1 class="titulo1">Cambio de contraseña</h1>
                     <div class="contact-wrapper animated bounceInUp">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </main>
     <script src="../../assets/js-general/menu-responsive.js"></script>

@@ -1,13 +1,14 @@
 <?php
 include "../../controller/sesiones/sesiones_prof.php";
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profesional</title>
+    <title>Actualizar contraseña profesional</title>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../profesional/assets/css/styles.css">
@@ -28,7 +29,8 @@ include "../../controller/sesiones/sesiones_prof.php";
                     <img src="../assets/images/ajustes.png" alt="">
                     <ul>
                         <li><a href="index_prof.php" >Inicio</a></li>
-                        <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
+                        <li><a href="./update_prof/update_prof.php">Actualizar datos</a></li>
+                        <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
             </div>
@@ -41,17 +43,17 @@ include "../../controller/sesiones/sesiones_prof.php";
                     <h1 class="titulo1">Actualizar Contraseña</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                        <form action="update_pacientes_alert3.php" method="POST">
                                 <p>
-                                    <label>Digitar nueva Contraseña</label>
-                                    <input type="text" name="t_doc">
+                                    <label>Nueva contraseña</label>
+                                    <input type="text" name="contra">
                                 </p>
                                 <p>
-                                    <label>Confirmar contraseña</label>
-                                    <input type="number" name="num_doc">
-                                
+                                    <label>Repita contraseña</label>
+                                    <input type="text" name="contra">
+                                </p>
                                 <p class="block">
-                                    <button name="registrar" type="submit">
+                                    <button name="update_con" type="submit">
                                         Actualizar
                                     </button>
                                 </p>

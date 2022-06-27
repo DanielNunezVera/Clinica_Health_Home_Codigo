@@ -3,7 +3,7 @@ include "../../../controller/sesiones/sesiones_prof.php";
 include "../../../controller/conexion-db/db_connect.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,6 +36,7 @@ include "../../../controller/conexion-db/db_connect.php";
                     <img src="../../assets/images/ajustes.png" alt="">
                     <ul>
                         <li><a href="../index_prof.php" >Inicio</a></li>
+                        <li><a href="../update_prof/update_prof.php">Actualizar datos</a></li>
                         <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
@@ -44,7 +45,7 @@ include "../../../controller/conexion-db/db_connect.php";
     </header>
     <main>
         <div class="container__cover">
-            <div class="cover"> 
+            <div class="cover">
                 <div class="caja3">
                     <h1>Citas Programadas</h1>
                     <div class="row">
@@ -81,14 +82,14 @@ include "../../../controller/conexion-db/db_connect.php";
                                                 </tr>";
                                         }
                                         echo "</tbody>";
-                                    echo "</table>";    
+                                    echo "</table>";
                                 }
                             ?>
-                             
+
                         </div>
-                    </div> 
+                    </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </main>
     <script src="../../assets/js-general/menu-responsive.js"></script>
@@ -97,10 +98,10 @@ include "../../../controller/conexion-db/db_connect.php";
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-            
+
     <!--   Datatables-->
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>  
-      
+
     <!-- extension responsive -->
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script>
@@ -109,14 +110,14 @@ include "../../../controller/conexion-db/db_connect.php";
             $('#example').DataTable({
                 responsive: true,
                 "language": {
-                    "lengthMenu": "Mostrar " + 
+                    "lengthMenu": "Mostrar " +
                         `<select class="custom-select custom-select-sm form-control form-control-sm">
                             <option value='10'>10</option>
                             <option value='25'>25</option>
                             <option value='50'>50</option>
                             <option value='100'>100</option>
                             <option value='-1'>Todos</option>
-                        </select>` + 
+                        </select>` +
                         " registros por página",
                     "zeroRecords": "No hay registros ",
                     "info": "Mostrando pagina _PAGE_ de _PAGES_",
@@ -129,7 +130,7 @@ include "../../../controller/conexion-db/db_connect.php";
                     }
                 }
                 });
-        });  
+        });
 
 
     </script>
