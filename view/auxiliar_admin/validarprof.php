@@ -43,7 +43,7 @@ include "../../controller/sesiones/sesiones_aux.php";
                 <div class="caja3">
                     <h1>Citas Profesionales</h1>
                     <div class="contenedor__login-register">
-                        <form action="citasprof.php" class="" method="POST">
+                        <form action="view_citas/citasprof.php" class="" method="POST">
                             <select class="Selectordoc" name="tipo_doc" id="tipo_doc">
                                 <option >Elige el tipo de documento</option>
                                 <option value="CC">Cedula de ciudadania</option>

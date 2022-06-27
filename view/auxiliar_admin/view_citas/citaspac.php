@@ -55,9 +55,11 @@ include "../../controller/sesiones/sesiones_aux.php";
                                         <th>Id_cita</th>
                                         <th>Fecha cita</th>
                                         <th>Hora cita</th>
-                                        <th>Id paciente</th>
-                                        <th>Paciente</th>
-                                        <th>Reasignar</th>
+                                        <th>Especilidad</th>
+                                        <th>Consultorio</th>
+                                        <th>Profesional</th>
+                                        <th>Costo</th>
+                                        <th>Estado pago cita</th>
                                         <th>Acción</th>
                                     </tr>
                                 </thead>
@@ -67,19 +69,21 @@ include "../../controller/sesiones/sesiones_aux.php";
                                         <td>07-julio-2022</td>
                                         <td>7:00 am</td>
                                         <td>Medicina general</td>
+                                        <td>C01</td>
                                         <td>Manuel Rodolfo</td>
                                         <td>$50.000</td>
                                         <td><a href="#">OK</a></td>
                                         <td><a href="">Cancelar</a></td>
                                     </tr>
                                     <tr>
-                                        <td>54</td>
-                                        <td>30-julio-2022</td>
-                                        <td>12:00 pm</td>
-                                        <td>Dermatología </td>
+                                        <td>21</td>
+                                        <td>28-julio-2022</td>
+                                        <td>7:00 am</td>
+                                        <td>Dermatología</td>
+                                        <td>C05</td>
                                         <td>Lucia Castro Bermudez</td>
-                                        <td>$70.000</td>
-                                        <td><a href="#">Confirmar pago</a></td>
+                                        <td>$60.000</td>
+                                        <td><a href="#">Pdte Pago</a></td>
                                         <td><a href="">Cancelar</a></td>
                                     </tr>
                                 </tbody>
