@@ -28,7 +28,6 @@ include "../../controller/sesiones/sesiones_prof.php";
                     <img src="../assets/images/ajustes.png" alt="">
                     <ul>
                         <li><a href="index_prof.php" >Inicio</a></li>
-                        <li><a href="./update_prof/update_prof.php">Actualizar datos</a></li>
                         <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
@@ -41,6 +40,8 @@ include "../../controller/sesiones/sesiones_prof.php";
                 <div class="caja1">
                     <div class="row">
                         <h1>Bienvenido - <?php echo $_SESSION['p_nombre_pers'], $_SESSION['p_apellido_pers']?></h1>
+                        <a href="update_prof/update_prof.php" class="boton">Actualizar Datos</a>
+                        <br>
                         <a href="citas_programadas/citas_programadas.php" class="boton">Citas Programadas</a>
                         <br>
                     </div>

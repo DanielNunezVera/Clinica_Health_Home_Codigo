@@ -1,18 +1,17 @@
 <?php
-include "../../../controller/sesiones/sesiones_admin.php";
-?> 
+include "../../../controller/sesiones/sesiones_prof.php";
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva especialidad</title>
-
+    <title>Actualizar contraseña profesional</title>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="../../assets/css/administrador-css/estilos.css">
+    <link rel="stylesheet" href="../../assets/css/profesional-css/estilos.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap');
     </style>
@@ -29,7 +28,7 @@ include "../../../controller/sesiones/sesiones_admin.php";
                 <nav id="nav">
                     <img src="../../assets/images/ajustes.png" alt="">
                     <ul>
-                        <li><a href="../index_admin.php">Inicio</a></li>
+                        <li><a href="../index_prof.php" >Inicio</a></li>
                         <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
@@ -38,30 +37,30 @@ include "../../../controller/sesiones/sesiones_admin.php";
     </header>
     <main>
         <div class="container__cover">
-            <div class="cover"> 
+            <div class="cover">
                 <div class="caja3">
-                    <h1 class="titulo1">Nueva especialidad</h1>
+                    <h1 class="titulo1">Actualizar Contraseña</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                        <form action="update_pacientes_alert3.php" method="POST">
                                 <p>
-                                    <label>Especialidad</label>
-                                    <input type="text" name="t_doc" disabled>
+                                    <label>Nueva contraseña</label>
+                                    <input type="password" name="contra">
                                 </p>
                                 <p>
-                                    <label>Costo</label>
-                                    <input type="number" name="num_doc" disabled>
+                                    <label>Repita contraseña</label>
+                                    <input type="password" name="contra">
                                 </p>
                                 <p class="block">
-                                    <button name="registrar" type="submit">
-                                        Registrar
+                                    <button name="update_con" type="submit">
+                                        Actualizar
                                     </button>
                                 </p>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </main>
     <script src="../../assets/js-general/menu-responsive.js"></script>

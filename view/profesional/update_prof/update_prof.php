@@ -19,17 +19,16 @@ include "../../../controller/sesiones/sesiones_prof.php";
     <header>
         <div class="container__menu">
             <div class="logo">
-                <img src="../assets/images/Logo2.png" alt="">
+                <img src="../../assets/images/Logo2.png" alt="">
             </div>
             <div class="menu">
                 <i class="fas fa-bars" id="btn_menu"></i>
                 <div id="back_menu"></div>
                 <nav id="nav">
-                    <img src="../assets/images/ajustes.png" alt="">
+                    <img src="../../assets/images/ajustes.png" alt="">
                     <ul>
                         <li><a href="../index_prof.php" >Inicio</a></li>
-                        <li><a href="./update_prof.php">Actualizar datos</a></li>
-                        <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
+                        <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
             </div>
@@ -45,35 +44,23 @@ include "../../../controller/sesiones/sesiones_prof.php";
                             <form action="" method="POST">
                                 <p>
                                     <label>Tipo de documento</label>
-                                    <input type="text" name="t_doc" disabled>
+                                    <input type="text" name="t_doc" value="<?php echo $_SESSION['t_doc_pers']?>" disabled>
                                 </p>
                                 <p>
                                     <label>N° documento</label>
-                                    <input type="number" name="num_doc" disabled>
+                                    <input type="number" name="num_doc" value="<?php echo $_SESSION['num_doc_pers'];?>" disabled>
                                 </p>
                                 <p>
-                                    <label>Primer nombre</label>
-                                    <input type="text" name="p_nombre">
-                                </p>
-                                <p>
-                                    <label>Segundo nombre</label>
-                                    <input type="text" name="s_nombre">
-                                </p>
-                                <p>
-                                    <label>Primer apellido</label>
-                                    <input type="text" name="p_apellido">
-                                </p>
-                                <p>
-                                    <label>Segundo apellido</label>
-                                    <input type="text" name="s_apellido">
+                                    <label>Nombre completo</label>
+                                    <input type="text" name="fullnombre" value="<?php echo $_SESSION['p_nombre_pers']."".$_SESSION['s_nombre_pers']."".$_SESSION['p_apellido_pers']."".$_SESSION['s_apellido_pers'];?>" disabled>
                                 </p>
                                 <p>
                                     <label>Teléfono</label>
-                                    <input type="tel" name="tel">
+                                    <input type="tel" name="tel" value="<?php echo $_SESSION['tel_pers'];?>" required>
                                 </p>
                                 <p>
                                     <label>Email</label>
-                                    <input type="email" name="email">
+                                    <input type="email" name="email" value="<?php echo $_SESSION['correo_pers']?>" required>
                                 </p>
                                 <p>
                                     <label>Dias laborales (inicial)</label>
@@ -82,7 +69,7 @@ include "../../../controller/sesiones/sesiones_prof.php";
 
                                 <p>
                                     <label>Franja laboral (inicial)</label>
-                                    <input value="7:00am - 7:00pm" name="franja_horaria" disabled>
+                                    <input value="8:00am - 6:00pm" name="franja_horaria" disabled>
                                 </p>
                                 
                                 <p>
@@ -102,5 +89,10 @@ include "../../../controller/sesiones/sesiones_prof.php";
         </div>
     </main>
     <script src="../../assets/js-general/menu-responsive.js"></script>
+    <script>
+        function contraseña(){
+            window.location = "update_pass.php"
+        }
+    </script>
 </body>
 </html>
