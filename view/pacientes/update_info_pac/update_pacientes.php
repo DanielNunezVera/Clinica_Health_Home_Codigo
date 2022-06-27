@@ -11,8 +11,7 @@
 
     $filas = mysqli_num_rows($resultado);
 
-    if($filas == 1){
-        
+    if($filas == 1){        
         $_SESSION['id_pac'] = $fila['id_pac'];
         $_SESSION['genero'] = $fila['genero'];
         $_SESSION['fecha_nacimiento'] = $fila['fecha_nacimiento'];
@@ -20,7 +19,6 @@
         $_SESSION['actualizacion'] = $fila['actualizacion'];
         $_SESSION['delete'] = $fila['delete'];
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="es"> 

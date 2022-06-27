@@ -61,8 +61,6 @@ include "../../../controller/sesiones/sesiones_pac.php";
                                         <option value="">Arturo Perez</option>
                                         <option value="">Monica Leal</option>
                                         <option value="">Jaime </option>
-                                        <option value="">Dermatologia</option>
-                                        <option value="">Urologia</option>
                                     </select>
                                 </p>
                                 <p>
