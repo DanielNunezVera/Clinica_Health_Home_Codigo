@@ -1,33 +1,11 @@
-CREATE DATABASE db_clinica_healt_home;
+--Se comienza creando la base datos --
+CREATE DATABASE clinica_health_home;
 
-CREATE TABLE `admin_sistema` (
-  `user` varchar(15) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `actualizacion` DATETIME(6),
-  `delete` DATETIME(6),
-   PRIMARY KEY (`user`)
-);
+--Se deben crear las tablas en orden para que no haya errores con foraneas--
 
-CREATE TABLE `consultorios` (
-  `id_consult` varchar(3) NOT NULL,
-  `estado_consult` tinyint(1) NOT NULL
-   `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-   `actualizacion` DATETIME(6),
-   `delete`  DATETIME(6),
-   PRIMARY KEY (`id_consult`)
-);
 
-CREATE TABLE `especialidades`(
-  `id_espec` tinyint(2) NOT NULL AUTO_INCREMENT,
-  `descrip_espec` varchar(30) NOT NULL,
-  `costo_espec` int(6) NOT NULL,
-  `estado_espec` tinyint(1) NOT NULL,
-  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `actualizacion` DATETIME(6),
-  `delete` DATETIME(6),
-   PRIMARY KEY (`id_espec`)  
-); 
+--La primera tabla debe ser 'tipo_doc' con sus respectivos campos y atributos 
+previamente acordados-- 
 
 CREATE TABLE `tipo_doc` (
   `t_doc` varchar(5) NOT NULL,
@@ -35,25 +13,94 @@ CREATE TABLE `tipo_doc` (
    PRIMARY KEY (`t_doc`)  
 );
 
+
+--Segunda tabla 'rol', se agregan los campos y atributos predefinidos--
+
+CREATE TABLE `rol` (
+  `id_rol` int(2) NOT NULL AUTO_INCREMENT,
+  `descrip_rol` varchar(35) NOT NULL UNIQUE,
+   PRIMARY KEY (`id_rol`)  
+);
+
+
+--Tercera tabla 'personas', se debe tener previamente las tablas creadas donde provengan
+ las llaves foraneas para evitar errores--
+
 CREATE TABLE `personas` (
-  `id_pers` BIGINT(8) NOT NULL AUTO_INCREMENT,
+  `id_pers` bigint(8) NOT NULL AUTO_INCREMENT,
   `t_doc_pers` varchar(5) NOT NULL,
   `num_doc_pers` varchar(20) NOT NULL,
   `p_nombre_pers` varchar(20) NOT NULL,
   `s_nombre_pers` varchar(20) DEFAULT NULL,
   `p_apellido_pers` varchar(20) NOT NULL,
   `s_apellido_pers` varchar(20) DEFAULT NULL,
-  `tel_pers` BIGINT(10) NOT NULL,
+  `tel_pers` bigint(10) NOT NULL,
   `correo_pers` varchar(30) NOT NULL,
   `estado_pers` tinyint(1) NOT NULL,
-  `rol_pers` varchar(64) NOT NULL,
-  `password` varchar(20) DEFAULT NULL,
-  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `actualizacion` DATETIME(6),
-  `delete` DATETIME(6),  
+  `rol` INT(2) NOT NULL,
+  `pass` varchar(20) NOT NULL,
+  `creacion` datetime(6) DEFAULT current_timestamp(6) NOT NULL,
+  `actualizacion` datetime(6) DEFAULT NULL,
+  `delete` datetime(6) DEFAULT NULL,  
    PRIMARY KEY (`id_pers`),
-   FOREIGN KEY (`t_doc_pers`) REFERENCES `tipo_doc`(`t_doc`)
+   FOREIGN KEY (`t_doc_pers`) REFERENCES `tipo_doc`(`t_doc`),
+   FOREIGN KEY (`rol`) REFERENCES `rol`(`id_rol`)
 );
+
+
+--Cuarta tabla 'pacientes', precaución en las llaves foraneas, demas campos y atributos  --
+
+CREATE TABLE `pacientes` (
+  `id_pac` BIGINT(8) NOT NULL,
+  `genero` char(1) NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
+  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `actualizacion` DATETIME(6) DEFAULT NULL,
+  `delete` DATETIME(6)  DEFAULT NULL,
+   FOREIGN KEY (`id_pac`) REFERENCES `personas`(`id_pers`), 
+   PRIMARY KEY (`id_pac`)   
+);
+
+
+--Quinta tabla 'auxiliares_admin', precaución en las llaves foraneas--
+
+   CREATE TABLE `auxiliares_admin` (
+  `id_aux` BIGINT(8) NOT NULL,
+  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `actualizacion` DATETIME(6) DEFAULT NULL,
+  `delete` DATETIME(6) DEFAULT NULL,
+   FOREIGN KEY (`id_aux`) REFERENCES `personas`(`id_pers`),
+   PRIMARY KEY (`id_aux`)
+);
+
+
+--Sexta tabla 'consultorios', crear los campos y atributos necesarios--
+
+CREATE TABLE `consultorios` (
+  `id_consult` varchar(3) NOT NULL,
+  `estado_consult` tinyint(1) NOT NULL,
+   `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+   `actualizacion` DATETIME(6) DEFAULT NULL,
+   `delete`  DATETIME(6) DEFAULT NULL,
+   PRIMARY KEY (`id_consult`)
+);
+
+
+--Septima tabla 'consultorios', crear los campos y atributos necesarios--
+
+CREATE TABLE `especialidades`(
+  `id_espec` tinyint(2) NOT NULL AUTO_INCREMENT,
+  `descrip_espec` varchar(30) NOT NULL,
+  `costo_espec` int(6) NOT NULL,
+  `estado_espec` tinyint(1) NOT NULL,
+  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `actualizacion` DATETIME(6) DEFAULT NULL,
+  `delete` DATETIME(6) DEFAULT NULL,
+   PRIMARY KEY (`id_espec`)  
+); 
+
+
+--Octava tabla 'profesionales', tener precaución con las llaves foraneas para evitar errores de sintaxis--
 
 CREATE TABLE `profesionales` (
   `id_prof` BIGINT(8) NOT NULL,
@@ -61,44 +108,43 @@ CREATE TABLE `profesionales` (
   `franja_horaria` varchar(20) NOT NULL,
   `id_consult` varchar(3) NOT NULL,
   `id_espec` tinyint(2) NOT NULL,
-  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `actualizacion` DATETIME(6),
-  `delete` DATETIME(6),
+  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `actualizacion` DATETIME(6) DEFAULT NULL,
+  `delete` DATETIME(6) DEFAULT NULL,
    FOREIGN KEY (`id_prof`) REFERENCES `personas`(`id_pers`),
+   FOREIGN KEY (`id_consult`) REFERENCES `consultorios`(`id_consult`),
+   FOREIGN KEY (`id_espec`) REFERENCES `especialidades`(`id_espec`),
    PRIMARY KEY (`id_prof`)
 );
 
-CREATE TABLE `pacientes` (
-  `id_pac` BIGINT(8) NOT NULL,
-  `genero` char(1) NOT NULL,
-  `fecha_nacimiento` date NOT NULL,
-  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `actualizacion` DATETIME(6),
-  `delete` DATETIME(6),
-   FOREIGN KEY (`id_pac`) REFERENCES `personas`(`id_pers`), 
-   PRIMARY KEY (`id_pac`)   
+
+--Novena tabla 'admin_sistema', agregar campos y atributos necesarios--
+ 
+CREATE TABLE `admin_sistema` (
+  `user` varchar(15) NOT NULL,
+  `pass` varchar(20) NOT NULL,
+  `rol` int(2) NOT NULL,
+  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `actualizacion` DATETIME(6) DEFAULT NULL,
+  `delete` DATETIME(6) DEFAULT NULL,
+   PRIMARY KEY (`user`),
+   FOREIGN KEY (`rol`) REFERENCES `rol`(`id_rol`)
+   
 );
 
-CREATE TABLE `auxiliares_admin` (
-  `id_aux` BIGINT(8) NOT NULL,
-  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `actualizacion` DATETIME(6),
-  `delete` DATETIME(6),
-   FOREIGN KEY (`id_aux`) REFERENCES `personas`(`id_pers`),
-   PRIMARY KEY (`id_aux`)
-);
+-- Decima tabla 'citas', tener encuenta los campos y atributos propios y foraneas para el correcto uso de la tabla--
 
 CREATE TABLE `citas` (
-  `id_cita` BIGINT(11) NOT NULL,
+  `id_cita` BIGINT(11) NOT NULL AUTO_INCREMENT,
   `fecha_cita` date NOT NULL,
   `hora_cita` time NOT NULL,
   `estado_pago_cita` tinyint(1) NOT NULL,
   `asistencia_cita` tinyint(1) NOT NULL,
   `id_prof` BIGINT(8) NOT NULL, 
   `id_pac` BIGINT(8) NOT NULL,  
-  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `actualizacion` DATETIME(6),
-  `delete` DATETIME(6),
+  `creacion` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `actualizacion` DATETIME(6) DEFAULT NULL,
+  `estado_cita` TINYINT(1) DEFAULT NULL,
    PRIMARY KEY (`id_cita`),
    FOREIGN KEY (`id_prof`) REFERENCES `profesionales`(`id_prof`),
    FOREIGN KEY (`id_pac`) REFERENCES `pacientes`(`id_pac`)   
