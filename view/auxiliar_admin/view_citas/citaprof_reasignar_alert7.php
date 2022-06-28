@@ -7,7 +7,7 @@ include "../../../controller/sesiones/sesiones_aux.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citas</title>
+    <title>Citas agendadas</title>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../assets/css/auxiliar-admin-css/estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -35,8 +35,8 @@ include "../../../controller/sesiones/sesiones_aux.php";
                     <img src="../../assets/images/icon_auxadmin.png" alt="">
                     <ul>
                         <li><a href="../index_aux.php">Inicio</a></li>
-                        <li><a href="../update_info_aux/update_aux.php">Actualizar datos</a></li>
-                        <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesión</a></li>
+                        <li><a href="update_aux.php">Actualizar datos</a></li>
+                        <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
             </div>
@@ -46,7 +46,7 @@ include "../../../controller/sesiones/sesiones_aux.php";
         <div class="container__cover">
             <div class="cover"> 
                 <div class="caja3">
-                    <h1>Citas paciente</h1>
+                    <h1>Citas profesional</h1>
                     <div class="row">
                         <div class="col-lg-12">
                             <table id="example" class="table table-bordered  display nowrap" cellspacing="0" width="100%">
@@ -55,11 +55,12 @@ include "../../../controller/sesiones/sesiones_aux.php";
                                         <th>Id_cita</th>
                                         <th>Fecha cita</th>
                                         <th>Hora cita</th>
-                                        <th>Especilidad</th>
-                                        <th>Consultorio</th>
+                                        <th>Paciente</th>
                                         <th>Profesional</th>
+                                        <th>Consultorio</th>
+                                        <th>Especialidad</th>
                                         <th>Costo</th>
-                                        <th>Estado pago cita</th>
+                                        <th>Reasignar</th>
                                         <th>Acción</th>
                                     </tr>
                                 </thead>
@@ -68,33 +69,30 @@ include "../../../controller/sesiones/sesiones_aux.php";
                                         <td>20</td>
                                         <td>07-julio-2022</td>
                                         <td>7:00 am</td>
+                                        <td>Estevan Hernandez</td>
+                                        <td>Manuel Rodolfo Castro</td>
+                                        <td>C03</td>
                                         <td>Medicina general</td>
-                                        <td>C01</td>
-                                        <td>Manuel Rodolfo</td>
                                         <td>$50.000</td>
-                                        <td><a href="citapac_confpago_alert5.php">Pdte Pago</a></td>
-                                        <td><a href="citapac_cancel_alert2.php">Cancelar</a></td>
+                                        <td><a href="#">Reasignar</a></td>
+                                        <td><a href="#">Cancelar</a></td>
                                     </tr>
                                     <tr>
-                                        <td>21</td>
-                                        <td>28-julio-2022</td>
-                                        <td>7:00 am</td>
-                                        <td>Dermatología</td>
-                                        <td>C05</td>
-                                        <td>Lucia Castro Bermudez</td>
-                                        <td>$60.000</td>
-                                        <td><a href="citapac_confpago_alert5.php">Pdte Pago</a></td>
-                                        <td><a href="citapac_cancel_alert2.php">Cancelar</a></td>
+                                        <td>35</td>
+                                        <td>09-julio-2022</td>
+                                        <td>11:00 am</td>
+                                        <td>Juan Diego Cortez</td>
+                                        <td>Manuel Rodolfo Castro</td>
+                                        <td>C03</td>
+                                        <td>Medicina general</td>
+                                        <td>$50.000</td>
+                                        <td><a href="#">Reasignar</a></td>
+                                        <td><a href="#">Cancelar</a></td>
                                     </tr>
                                 </tbody>
                             </table>  
                         </div>
                     </div> 
-                    <p class="boton_espec">
-                        <button name="Agendar" type="submit" onclick="enviarform()">
-                            Agendar cita
-                        </button>
-                    </p>
                 </div>
             </div> 
         </div>
@@ -114,12 +112,8 @@ include "../../../controller/sesiones/sesiones_aux.php";
 
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="../assets/js/sweetAlert7.js"></script>
     <script>
-        function enviarform(){
-            window.location = "../agenda_cita/agendarcita.php"
-        };
-
         $(document).ready(function() {
             $('#example').DataTable({
                 responsive: true,
@@ -148,5 +142,6 @@ include "../../../controller/sesiones/sesiones_aux.php";
 
 
     </script>
+    
 </body>
 </html>
