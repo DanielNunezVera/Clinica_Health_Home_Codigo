@@ -43,14 +43,14 @@ include "../../../controller/sesiones/sesiones_admin.php";
                     <h1 class="titulo1">Nueva especialidad</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                            <form action="gestion_espec_alert8.php" method="POST">
                                 <p>
                                     <label>Especialidad</label>
-                                    <input type="text" name="t_doc" disabled>
+                                    <input type="text" name="t_doc" required>
                                 </p>
                                 <p>
                                     <label>Costo</label>
-                                    <input type="number" name="num_doc" disabled>
+                                    <input type="number" name="num_doc" required>
                                 </p>
                                 <p class="block">
                                     <button name="registrar" type="submit">

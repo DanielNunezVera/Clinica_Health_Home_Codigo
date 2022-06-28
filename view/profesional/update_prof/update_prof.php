@@ -41,9 +41,9 @@ include "../../../controller/sesiones/sesiones_prof.php";
                     <h1 class="titulo1">Actualizar Datos</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                            <form action="update_prof_alert1.php" method="POST">
                                 <p>
-                                    <label>Tipo de documento</label>
+                                    <label>Tipo doc</label>
                                     <input type="text" name="t_doc" value="<?php echo $_SESSION['t_doc_pers']?>" disabled>
                                 </p>
                                 <p>
@@ -51,7 +51,7 @@ include "../../../controller/sesiones/sesiones_prof.php";
                                     <input type="number" name="num_doc" value="<?php echo $_SESSION['num_doc_pers'];?>" disabled>
                                 </p>
                                 <p>
-                                    <label>Nombre completo</label>
+                                    <label>Nombre </label>
                                     <input type="text" name="fullnombre" value="<?php echo $_SESSION['p_nombre_pers']."".$_SESSION['s_nombre_pers']."".$_SESSION['p_apellido_pers']."".$_SESSION['s_apellido_pers'];?>" disabled>
                                 </p>
                                 <p>
@@ -63,18 +63,18 @@ include "../../../controller/sesiones/sesiones_prof.php";
                                     <input type="email" name="email" value="<?php echo $_SESSION['correo_pers']?>" required>
                                 </p>
                                 <p>
-                                    <label>Dias laborales (inicial)</label>
+                                    <label>Dias laborales </label>
                                     <input value="lunes - viernes" name="dias_laborales" disabled>
                                 </p>
 
                                 <p>
-                                    <label>Franja laboral (inicial)</label>
+                                    <label>Franja laboral </label>
                                     <input value="8:00am - 6:00pm" name="franja_horaria" disabled>
                                 </p>
                                 
                                 <p>
                                     <label>Contraseña</label>
-                                    <input type="button" name="pass" value="Cambiar contraseña" onclick="contraseña()">
+                                    <input name="pass" value="Cambiar contraseña" onclick="contraseña()" style="color:blue;">
                                 </p>
                                 <p class="block">
                                     <button name="registrar" type="submit">

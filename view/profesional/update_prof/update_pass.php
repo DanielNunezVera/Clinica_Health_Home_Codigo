@@ -42,7 +42,7 @@ include "../../../controller/sesiones/sesiones_prof.php";
                     <h1 class="titulo1">Actualizar Contraseña</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                        <form action="update_pacientes_alert3.php" method="POST">
+                        <form action="update_prof_alert2.php" method="POST">
                                 <p>
                                     <label>Nueva contraseña</label>
                                     <input type="password" name="contra">

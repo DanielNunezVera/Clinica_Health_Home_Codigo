@@ -104,7 +104,7 @@
                                 </p>
                                 <p>
                                     <label>Contraseña</label>
-                                    <input type="button" name="email" value="Cambiar contraseña" onclick="contraseña()">
+                                    <input style="color:blue;" name="pass" value="Cambiar contraseña" onclick="contraseña()">
                                 </p>
                                 <p class="block">
                                     <button name="update" type="submit">
