@@ -1,11 +1,11 @@
 <?php
-    include "../../controller/conexion-db/db_connect.php";
+    include "../../../controller/conexion-db/db_connect.php";
 
-    include "../../controller/sesiones/sesiones_pac.php";
+    include "../../../controller/sesiones/sesiones_pac.php";
 
     $consulta = "SELECT * FROM personas INNER JOIN pacientes ON personas.id_pers = pacientes.id_pac";
 
-    $resultado = mysqli_query($conectar, $consulta);
+    $resultado = mysqli_query($conectar, $consulta) or die(mysqli_error());
 
     $fila = mysqli_fetch_assoc($resultado);
 
@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión Usuarios</title>
+    <title>Actualizacion datos</title>
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -42,17 +42,17 @@
     <header>
         <div class="container__menu">
             <div class="logo">
-                <img src="../assets/images/Logo2.png" alt="">
+                <img src="../../assets/images/Logo2.png" alt="">
             </div>
             <div class="menu">
                 <i class="fas fa-bars" id="btn_menu"></i>
                 <div id="back_menu"></div>
                 <nav id="nav">
-                    <img src="../../assets/images/ajustes.png" alt="">
+                    <img src="../../../assets/images/ajustes.png" alt="">
                     <ul>
-                        <li><a href="../pacientes/index_pac.php">Inicio</a></li>
-                        <li><a href="../Update pacientes/update_pacientes.php">Actualizar datos</a></li>
-                        <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
+                        <li><a href="../index_pac.php">Inicio</a></li>
+                        <li><a href="../../Update pacientes/update_pacientes.php">Actualizar datos</a></li>
+                        <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
             </div>
@@ -65,7 +65,7 @@
                     <h1 class="titulo1">Información general</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                            <form action="update_pacientes_alert4.php" method="POST">
                                 <!-- <p>
                                     <label>Tipo de documento</label>
                                     <input type="text" name="t_doc" disabled>
@@ -102,10 +102,9 @@
                                     <label>Fecha de nacimiento</label>
                                     <input type="text" name="f_nacimiento" value="<?php echo date('d/m/Y',strtotime($_SESSION['fecha_nacimiento']));?>" disabled>
                                 </p>
-                                <p class="block">
-                                    <button name="update" type="submit">
-                                        Actualizar
-                                    </button>
+                                <p>
+                                    <label>Contraseña</label>
+                                    <input style="color:blue;" name="pass" value="Cambiar contraseña" onclick="contraseña()">
                                 </p>
                                 <p class="block">
                                     <button name="update" type="submit">
@@ -120,5 +119,12 @@
         </div>
     </main>
     <script src="../../assets/js-general/menu-responsive.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/js/sweetAlert4.js"></script>
+    <script>
+        function contraseña(){
+            window.location = "update_contraseña.php"
+        }
+    </script>
 </body>
 </html>

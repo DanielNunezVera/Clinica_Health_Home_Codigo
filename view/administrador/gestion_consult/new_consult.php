@@ -43,10 +43,10 @@ include "../../../controller/sesiones/sesiones_admin.php";
                     <h1 class="titulo1">Nuevo consultorio</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                            <form action="gestion_consult_alert10.php" method="POST">
                                 <p>
                                     <label>Id consultorio</label>
-                                    <input type="text" name="cons" disabled>
+                                    <input type="text" name="cons">
                                 </p>
                                 <p class="block">
                                     <button name="registrar" type="submit">

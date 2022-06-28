@@ -42,21 +42,21 @@ include "../../../controller/sesiones/sesiones_admin.php";
                     <h1 class="titulo1">Actualizar especialidad</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                            <form action="gestion_espec_alert7.php" method="POST">
                                 <p>
                                     <label>Especialidad</label>
-                                    <input type="text" name="t_doc" disabled>
+                                    <input type="text" name="t_doc" value="Medicina general">
                                 </p>
                                 <p>
                                     <label>Costo</label>
-                                    <input type="number" name="num_doc" disabled>
+                                    <input type="number" name="num_doc" value=50.000>
                                 </p>
                                 <p>
                                     <label>Estado</label>
                                     <select class="Selectorconsult" name="tipo_doc" id="tipo_doc">
                                       <option >Seleccione</option>
-                                      <option value="ac">Activo</option>
-                                      <option value="dx">Inactivo</option>
+                                        <option value="ac">Activo</option>
+                                        <option value="dx">Inactivo</option>
                                     </select>
                                 </p>
                                 <p class="block">

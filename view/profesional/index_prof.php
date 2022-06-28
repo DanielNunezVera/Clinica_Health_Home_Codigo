@@ -2,7 +2,7 @@
 include "../../controller/sesiones/sesiones_prof.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,6 +28,7 @@ include "../../controller/sesiones/sesiones_prof.php";
                     <img src="../assets/images/ajustes.png" alt="">
                     <ul>
                         <li><a href="index_prof.php" >Inicio</a></li>
+                        <li><a href="update_prof/update_prof.php">Actualizar datos</a></li>
                         <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
@@ -36,24 +37,19 @@ include "../../controller/sesiones/sesiones_prof.php";
     </header>
     <main>
         <div class="container__cover">
-            <div class="cover"> 
+            <div class="cover">
                 <div class="caja1">
                     <div class="row">
                         <h1>Bienvenido - <?php echo $_SESSION['p_nombre_pers'], $_SESSION['p_apellido_pers']?></h1>
-                        <a href="" class="boton">Gestión Usuarios</a>
                         <br>
-                        <a href="" class="boton">Gestión Especialidades</a>
-                        <br>
-                        <a href="" class="boton">Gestión Consultorios</a>
-                        <br>
-                        <a href="" class="boton">Gestión Agenda</a>
+                        <a href="citas_programadas/citas_programadas.php" class="boton">Citas Programadas</a>
                         <br>
                     </div>
                 </div>
                 <div class="caja2">
-                    <img src="../assets/images/pngwing.com.png" alt="">
-                </div> 
-            </div> 
+                    <img src="../assets/images/profesional.png" alt="">
+                </div>
+            </div>
         </div>
     </main>
     <script src="../assets/js-general/menu-responsive.js"></script>

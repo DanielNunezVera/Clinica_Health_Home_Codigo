@@ -9,6 +9,6 @@ Swal.fire({
     cancelButtonText:'Cancelar'
   }).then((result) => {
     if (result.isConfirmed) {
-        window.location = "../administrador/indexadmin_ge_u_1.php"
+        window.location = "../gestion_usuarios/update_pac.php"
     }
   })

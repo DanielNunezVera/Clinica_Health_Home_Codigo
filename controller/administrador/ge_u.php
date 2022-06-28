@@ -26,8 +26,7 @@
 
         //CREAR UNA CONSULTA PARA SABER SI LOS DATOS SON CORRECTOS:
 
-        $consulta = "SELECT * FROM personas WHERE t_doc_pers='$t_doc_pers' AND num_doc_pers='$num_doc_pers'
-                     AND rol='$t_rol'";
+        $consulta = "SELECT * FROM personas WHERE t_doc_pers='$t_doc_pers' AND num_doc_pers='$num_doc_pers' AND rol='$t_rol'";
 
         $resultado = mysqli_query($conectar, $consulta) or die(mysqli_error);
 

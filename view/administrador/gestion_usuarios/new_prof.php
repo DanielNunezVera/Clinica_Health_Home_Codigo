@@ -61,19 +61,19 @@ include "../../../controller/sesiones/sesiones_admin.php";
                                     <input type="number" name="num_doc" value=<?php echo intval($_SESSION['num_doc_new'])?> disabled>
                                 </p>
                                 <p>
-                                    <label>Primer nombre</label>
+                                    <label>1° nombre</label>
                                     <input type="text" name="p_nombre" required>
                                 </p>
                                 <p>
-                                    <label>Segundo nombre</label>
+                                    <label>2° nombre</label>
                                     <input type="text" name="s_nombre">
                                 </p>
                                 <p>
-                                    <label>Primer apellido</label>
+                                    <label>1° apellido</label>
                                     <input type="text" name="p_apellido" required>
                                 </p>
                                 <p>
-                                    <label>Segundo apellido</label>
+                                    <label>2° apellido</label>
                                     <input type="text" name="s_apellido">
                                 </p>
                                 <p>

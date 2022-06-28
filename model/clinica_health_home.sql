@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-06-2022 a las 18:58:21
+-- Tiempo de generación: 28-06-2022 a las 03:32:08
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin_sistema` (
   `user` varchar(15) NOT NULL,
   `pass` varchar(20) NOT NULL,
-  `rol` int(11) NOT NULL,
+  `rol` int(2) NOT NULL,
   `creacion` datetime(6) NOT NULL DEFAULT current_timestamp(6),
   `actualizacion` datetime(6) DEFAULT NULL,
   `delete` datetime(6) DEFAULT NULL
@@ -79,14 +79,14 @@ CREATE TABLE `citas` (
   `id_pac` bigint(8) NOT NULL,
   `creacion` datetime(6) NOT NULL DEFAULT current_timestamp(6),
   `actualizacion` datetime(6) DEFAULT NULL,
-  `delete` datetime(6) DEFAULT NULL
+  `estado_cita` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `citas`
 --
 
-INSERT INTO `citas` (`id_cita`, `fecha_cita`, `hora_cita`, `estado_pago_cita`, `asistencia_cita`, `id_prof`, `id_pac`, `creacion`, `actualizacion`, `delete`) VALUES
+INSERT INTO `citas` (`id_cita`, `fecha_cita`, `hora_cita`, `estado_pago_cita`, `asistencia_cita`, `id_prof`, `id_pac`, `creacion`, `actualizacion`, `estado_cita`) VALUES
 (2, '0000-00-00', '04:38:00', 0, 0, 4, 3, '2022-05-19 16:37:55.000000', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -169,7 +169,6 @@ CREATE TABLE `personas` (
   `id_pers` bigint(8) NOT NULL,
   `t_doc_pers` varchar(5) NOT NULL,
   `num_doc_pers` varchar(20) NOT NULL,
-  `rol` int(11) NOT NULL,
   `p_nombre_pers` varchar(20) NOT NULL,
   `s_nombre_pers` varchar(20) DEFAULT NULL,
   `p_apellido_pers` varchar(20) NOT NULL,
@@ -177,7 +176,8 @@ CREATE TABLE `personas` (
   `tel_pers` bigint(10) NOT NULL,
   `correo_pers` varchar(30) NOT NULL,
   `estado_pers` tinyint(1) NOT NULL,
-  `pass` varchar(20) DEFAULT NULL,
+  `rol` int(2) NOT NULL,
+  `pass` varchar(20) NOT NULL,
   `creacion` datetime(6) NOT NULL DEFAULT current_timestamp(6),
   `actualizacion` datetime(6) DEFAULT NULL,
   `delete` datetime(6) DEFAULT NULL
@@ -187,10 +187,10 @@ CREATE TABLE `personas` (
 -- Volcado de datos para la tabla `personas`
 --
 
-INSERT INTO `personas` (`id_pers`, `t_doc_pers`, `num_doc_pers`, `rol`, `p_nombre_pers`, `s_nombre_pers`, `p_apellido_pers`, `s_apellido_pers`, `tel_pers`, `correo_pers`, `estado_pers`, `pass`, `creacion`, `actualizacion`, `delete`) VALUES
-(3, 'CC', '1001096345', 3, 'Estevan ', NULL, 'Hernandez ', NULL, 3158160563, 'gerardogeet@hotmail.com ', 1, '1234', '2022-05-19 16:25:47.000000', NULL, NULL),
-(4, 'CC', '1023002526', 1, 'Manuel ', NULL, 'Rodolfo ', NULL, 3212900450, 'rasquinbol@outlook.com', 1, '1234', '2022-05-19 16:25:47.000000', NULL, NULL),
-(5, 'CE', '1000160563', 2, 'Alejandro', NULL, 'Velázquez ', NULL, 3143204068, 'alejo@chamo.com', 1, 'chamo3000', '2022-05-19 16:27:44.000000', NULL, NULL);
+INSERT INTO `personas` (`id_pers`, `t_doc_pers`, `num_doc_pers`, `p_nombre_pers`, `s_nombre_pers`, `p_apellido_pers`, `s_apellido_pers`, `tel_pers`, `correo_pers`, `estado_pers`, `rol`, `pass`, `creacion`, `actualizacion`, `delete`) VALUES
+(3, 'CC', '1001096345', 'Estevan ', NULL, 'Hernandez ', NULL, 3158160563, 'gerardogeet@hotmail.com ', 1, 3, '1234', '2022-05-19 16:25:47.000000', NULL, NULL),
+(4, 'CC', '1023002526', 'Manuel ', NULL, 'Rodolfo ', NULL, 3212900450, 'rasquinbol@outlook.com', 1, 1, '1234', '2022-05-19 16:25:47.000000', NULL, NULL),
+(5, 'CE', '1000160563', 'Alejandro', NULL, 'Velázquez ', NULL, 3143204068, 'alejo@chamo.com', 1, 2, 'chamo3000', '2022-05-19 16:27:44.000000', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -223,7 +223,7 @@ INSERT INTO `profesionales` (`id_prof`, `dias_laborales`, `franja_horaria`, `id_
 --
 
 CREATE TABLE `rol` (
-  `id_rol` int(11) NOT NULL,
+  `id_rol` int(2) NOT NULL,
   `descrip_rol` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -306,7 +306,7 @@ ALTER TABLE `pacientes`
 --
 ALTER TABLE `personas`
   ADD PRIMARY KEY (`id_pers`),
-  ADD KEY `t_doc_pers` (`t_doc_pers`) USING BTREE,
+  ADD KEY `t_doc_pers` (`t_doc_pers`),
   ADD KEY `rol` (`rol`);
 
 --
@@ -350,13 +350,13 @@ ALTER TABLE `especialidades`
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id_pers` bigint(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pers` bigint(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_rol` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
@@ -366,7 +366,7 @@ ALTER TABLE `rol`
 -- Filtros para la tabla `admin_sistema`
 --
 ALTER TABLE `admin_sistema`
-  ADD CONSTRAINT `admin_sistema_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `rol` (`id_rol`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `admin_sistema_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `rol` (`id_rol`);
 
 --
 -- Filtros para la tabla `auxiliares_admin`
@@ -392,15 +392,15 @@ ALTER TABLE `pacientes`
 --
 ALTER TABLE `personas`
   ADD CONSTRAINT `personas_ibfk_1` FOREIGN KEY (`t_doc_pers`) REFERENCES `tipo_doc` (`t_doc`),
-  ADD CONSTRAINT `personas_ibfk_2` FOREIGN KEY (`rol`) REFERENCES `rol` (`id_rol`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `personas_ibfk_2` FOREIGN KEY (`rol`) REFERENCES `rol` (`id_rol`);
 
 --
 -- Filtros para la tabla `profesionales`
 --
 ALTER TABLE `profesionales`
   ADD CONSTRAINT `profesionales_ibfk_1` FOREIGN KEY (`id_prof`) REFERENCES `personas` (`id_pers`),
-  ADD CONSTRAINT `profesionales_ibfk_2` FOREIGN KEY (`id_espec`) REFERENCES `especialidades` (`id_espec`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `profesionales_ibfk_3` FOREIGN KEY (`id_consult`) REFERENCES `consultorios` (`id_consult`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `profesionales_ibfk_2` FOREIGN KEY (`id_consult`) REFERENCES `consultorios` (`id_consult`),
+  ADD CONSTRAINT `profesionales_ibfk_3` FOREIGN KEY (`id_espec`) REFERENCES `especialidades` (`id_espec`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

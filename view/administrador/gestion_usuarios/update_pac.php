@@ -43,38 +43,38 @@ include "../../../controller/sesiones/sesiones_admin.php";
                     <h1 class="titulo1">Actualizar datos</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                            <form action="gestion_usuarios_alerta3-2.php" method="POST">
                                 <p>
                                     <label>Tipo de documento</label>
-                                    <input type="text" name="t_doc" disabled>
+                                    <input type="text" name="t_doc" value="CC"disabled>
                                 </p>
                                 <p>
                                     <label>N° documento</label>
-                                    <input type="number" name="num_doc" disabled>
+                                    <input type="number" name="num_doc" value=1001096345 disabled>
                                 </p>
                                 <p>
-                                    <label>Primer nombre</label>
-                                    <input type="text" name="p_nombre" required>
+                                    <label>1° nombre</label>
+                                    <input type="text" name="p_nombre" value="Estevan" disabled>
                                 </p>
                                 <p>
-                                    <label>Segundo nombre</label>
-                                    <input type="text" name="s_nombre">
+                                    <label>2° nombre</label>
+                                    <input type="text" name="s_nombre" value="" disabled>
                                 </p>
                                 <p>
-                                    <label>Primer apellido</label>
-                                    <input type="text" name="p_apellido" required>
+                                    <label>1° apellido</label>
+                                    <input type="text" name="p_apellido" value="Hernandez" disabled>
                                 </p>
                                 <p>
-                                    <label>Segundo apellido</label>
-                                    <input type="text" name="s_apellido">
+                                    <label>2° apellido</label>
+                                    <input type="text" name="s_apellido" value="" disabled>
                                 </p>
                                 <p>
                                     <label>Teléfono</label>
-                                    <input type="tel" name="tel" required>
+                                    <input type="tel" name="tel" value=3158160563>
                                 </p>
                                 <p>
                                     <label>Email</label>
-                                    <input type="email" name="email" required>
+                                    <input type="email" name="email" value="gerardogeet@hotmail.com">
                                 </p>
                                 <p>
                                     <label>Fecha de nacimiento</label>
@@ -84,8 +84,8 @@ include "../../../controller/sesiones/sesiones_admin.php";
                                     <label>Estado paciente</label>
                                     <select class="Selectorconsult" name="tipo_doc" id="tipo_doc">
                                       <option >Seleccione</option>
-                                      <option value="ac">Activo</option>
-                                      <option value="dx">Inactivo</option>
+                                        <option value="ac">Activo</option>
+                                        <option value="dx">Inactivo</option>
                                     </select>
                                 </p>
                                 <p class="block">

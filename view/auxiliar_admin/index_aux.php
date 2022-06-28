@@ -28,7 +28,7 @@ include "../../controller/sesiones/sesiones_aux.php";
                     <img src="../assets/images/icon_auxadmin.png" alt="">
                     <ul>
                         <li><a href="index_aux.php" >Inicio</a></li>
-                        <li><a href="#">Actualizar datos</a></li>
+                        <li><a href="update_info_aux/update_aux.php">Actualizar datos</a></li>
                         <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesión</a></li>
                     </ul>
                 </nav>

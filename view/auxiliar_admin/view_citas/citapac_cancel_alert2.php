@@ -1,5 +1,5 @@
 <?php
-include "../../controller/sesiones/sesiones_aux.php";
+include "../../../controller/sesiones/sesiones_aux.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,9 +7,9 @@ include "../../controller/sesiones/sesiones_aux.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citas</title>
+    <title>Citas agendadas</title>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/auxiliar-admin-css/estilos.css">
+    <link rel="stylesheet" href="../../assets/css/auxiliar-admin-css/estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!--  Datatables  -->
@@ -26,17 +26,17 @@ include "../../controller/sesiones/sesiones_aux.php";
     <header>
         <div class="container__menu">
             <div class="logo">
-                <img src="../assets/images/Logo2.png" alt="">
+                <img src="../../assets/images/Logo2.png" alt="">
             </div>
             <div class="menu">
                 <i class="fas fa-bars" id="btn_menu"></i>
                 <div id="back_menu"></div>
                 <nav id="nav">
-                    <img src="../assets/images/icon_auxadmin.png" alt="">
+                    <img src="../../assets/images/icon_auxadmin.png" alt="">
                     <ul>
-                        <li><a href="index_aux.php">Inicio</a></li>
-                        <li><a href="#">Actualizar datos</a></li>
-                        <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesión</a></li>
+                        <li><a href="../index_aux.php">Inicio</a></li>
+                        <li><a href="update_aux.php">Actualizar datos</a></li>
+                        <li><a href="../../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
             </div>
@@ -46,21 +46,22 @@ include "../../controller/sesiones/sesiones_aux.php";
         <div class="container__cover">
             <div class="cover"> 
                 <div class="caja3">
-                    <h1>Citas médicas</h1>
+                    <h1>Citas paciente</h1>
                     <div class="row">
                         <div class="col-lg-12">
                             <table id="example" class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                                 <thead>
-                                    <tr>
-                                        <th>Id_cita</th>
-                                        <th>Fecha cita</th>
-                                        <th>Hora cita</th>
-                                        <th>Especilidad</th>
-                                        <th>Profesional</th>
-                                        <th>Costo</th>
-                                        <th>Estado pago cita</th>
-                                        <th>Acción</th>
-                                    </tr>
+                                <tr>
+                                    <th>Id_cita</th>
+                                    <th>Fecha cita</th>
+                                    <th>Hora cita</th>
+                                    <th>Especilidad</th>
+                                    <th>Consultorio</th>
+                                    <th>Profesional</th>
+                                    <th>Costo</th>
+                                    <th>Estado pago cita</th>
+                                    <th>Acción</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
@@ -68,35 +69,32 @@ include "../../controller/sesiones/sesiones_aux.php";
                                         <td>07-julio-2022</td>
                                         <td>7:00 am</td>
                                         <td>Medicina general</td>
+                                        <td>C01</td>
                                         <td>Manuel Rodolfo</td>
                                         <td>$50.000</td>
-                                        <td><a href="#">OK</a></td>
-                                        <td><a href="">Cancelar</a></td>
+                                        <td><a href="#">Pdte pago</a></td>
+                                        <td><a href="#">Cancelar</a></td>
                                     </tr>
                                     <tr>
-                                        <td>54</td>
-                                        <td>30-julio-2022</td>
-                                        <td>12:00 pm</td>
-                                        <td>Dermatología </td>
+                                        <td>21</td>
+                                        <td>28-julio-2022</td>
+                                        <td>7:00 am</td>
+                                        <td>Dermatología</td>
+                                        <td>C05</td>
                                         <td>Lucia Castro Bermudez</td>
-                                        <td>$70.000</td>
-                                        <td><a href="#">Confirmar pago</a></td>
-                                        <td><a href="">Cancelar</a></td>
+                                        <td>$60.000</td>
+                                        <td><a href="#">Pdte Pago</a></td>
+                                        <td><a href="#">Cancelar</a></td>
                                     </tr>
                                 </tbody>
                             </table>  
                         </div>
                     </div> 
-                    <p class="boton_espec">
-                        <button name="Agendar" type="submit" onclick="enviarform()">
-                            Agendar cita
-                        </button>
-                    </p>
                 </div>
             </div> 
         </div>
     </main>
-    <script src="../assets/js-general/menu-responsive.js"></script>
+    <script src="../../assets/js-general/menu-responsive.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -111,10 +109,8 @@ include "../../controller/sesiones/sesiones_aux.php";
 
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/js/sweetAlert2.js"></script>
     <script>
-        function enviarform(){
-            window.location = "#"
-        };
 
         $(document).ready(function() {
             $('#example').DataTable({
@@ -144,5 +140,6 @@ include "../../controller/sesiones/sesiones_aux.php";
 
 
     </script>
+    
 </body>
 </html>

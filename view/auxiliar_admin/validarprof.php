@@ -30,7 +30,7 @@ include "../../controller/sesiones/sesiones_aux.php";
                     <img src="../assets/images/ajustes.png" alt="">
                     <ul>
                         <li><a href="index_aux.php">Inicio</a></li>
-                        <li><a href="#">Actualizar datos</a></li>
+                        <li><a href="update_info_aux/update_aux.php">Actualizar datos</a></li>
                         <li><a href="../../controller/sesiones/cerrarsesion.php">Cerrar sesion</a></li>
                     </ul>
                 </nav>
@@ -43,7 +43,7 @@ include "../../controller/sesiones/sesiones_aux.php";
                 <div class="caja3">
                     <h1>Citas Profesionales</h1>
                     <div class="contenedor__login-register">
-                        <form action="citasprof.php" class="" method="POST">
+                        <form action="view_citas/citasprof.php" class="" method="POST">
                             <select class="Selectordoc" name="tipo_doc" id="tipo_doc">
                                 <option >Elige el tipo de documento</option>
                                 <option value="CC">Cedula de ciudadania</option>

@@ -70,6 +70,8 @@ header {
 
 .menu nav img {
     display: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu #btn_menu {
@@ -145,7 +147,6 @@ header nav ul li:hover {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    text-align: justify;
     align-content: center;
     align-items: center;
     margin-top: 106px;
@@ -235,7 +236,7 @@ header nav ul li:hover {
 }
 
 .container__cover .caja2 img {
-    width: 450px;
+    width: 430px;
     animation: move-vector 4s linear infinite;
     margin-top: 100px;
 }
@@ -298,7 +299,7 @@ header nav ul li:hover {
     }
 
     .container__cover .caja3 {
-        max-width: 500px;
+        max-width: 100%;
     }
 }
 
@@ -627,24 +628,5 @@ header nav ul li:hover {
 }
 
 table thead{
-    background-color: #38ef7d;        
-}
-/*interfaz paciente*/
-.selectage{
-    width: 100%;
-    margin-top: 20px;
-    ;
-    border: none;
-    background: #F2F2F2;
-    font-size: 16px;
-    outline: none;
-    height: 40%;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.txtlabel{
-    text-align: center;
-    font-weight:bold;
-    
+    background-color: white;        
 }

@@ -42,17 +42,17 @@ include "../../../controller/sesiones/sesiones_admin.php";
                     <h1 class="titulo1">Actualizar consultorio</h1>
                     <div class="contact-wrapper animated bounceInUp">
                         <div class="contact-form">
-                            <form action="" method="POST">
+                            <form action="gestion_consult_alert9.php" method="POST">
                                 <p>
                                     <label>Id consultorio</label>
-                                    <input type="text" name="t_doc" disabled>
+                                    <input type="text" name="t_doc" value="C01" disabled>
                                 </p>
                                 <p>
                                     <label>Estado</label>
                                     <select class="Selectorconsult" name="tipo_doc" id="tipo_doc">
                                       <option >Seleccione</option>
-                                      <option value="ac">Activo</option>
-                                      <option value="dx">Inactivo</option>
+                                        <option value="ac">Activo</option>
+                                        <option value="dx">Inactivo</option>
                                     </select>
                                 </p>
                                 <p class="block">
